@@ -19,7 +19,7 @@ body {
 }
 
 .navbar a {
-    margin: 0 70px;/*avant c'etait 15*/
+    margin: 0 15px;
     text-decoration: none;
     color: #c499ff;
     font-weight: bold;
