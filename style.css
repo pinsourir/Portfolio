@@ -1,20 +1,15 @@
-/* ===== STYLE GÉNÉRAL ===== */
+
+/* Nettoyage du body pour la police élégante */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    padding-top: 70px;
+    font-family: 'Playfair Display', serif; /* Police chic par défaut */
     background-color: #fff5f8;
     color: #333;
     text-align: center;
-    scroll-behavior: smooth; /* Scroll fluide */
+    scroll-behavior: smooth;
     /* Marge pour le contenu sous la navbar */
     padding-top: 70px;
-}
-
-/* Nettoyage des marges par défaut qui créent le "trait rose" */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 /* ===== NAVIGATION UNIQUE ET NETTOYÉE ===== */
 .navbar {
