@@ -171,13 +171,27 @@
 <!-- ===== 6. MENU ===== -->
 <section id="menu" class="section-white">
     <h2>Le Menu</h2>
-    <p><strong>Entrée :</strong> Sortie</p>
-    <p><strong>Plat :</strong> Ondulé</p>
-    <p><strong>Dessert :</strong> Un GROS GATEAU 🎂</p>
+    <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        
+        <div class="carousel-container" id="carousel">
+            <div class="carousel-slide">
+                <img src="https://www.convention.fr/media/catalog/product/s/i/sig094_800px.png" alt="Entrée">
+                <img src="https://m.media-amazon.com/images/I/816IxNoSfVL.jpg" alt="Plat">
+                <img src="https://i.pinimg.com/736x/86/4c/69/864c692ceed0e7405c508e588908e7fa.jpg" alt="Dessert">
+            </div>
+        </div>
 
-    <p>Les allergies alimentaires doivent être indiquées dans le formulaire ci-dessous.</p>
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="menu-details">
+        <p><strong>Entrée :</strong> Sortie</p>
+        <p><strong>Plat :</strong> Ondulé</p>
+        <p><strong>Dessert :</strong> Un GROS GATEAU 🎂</p>
+    </div>
 </section>
-
+    
 <!-- ===== 7. CONFIRMATION DE PRÉSENCE (GOOGLE FORM) ===== -->
 <section class="rsvp">
     <h2>Confirmation de présence</h2>
