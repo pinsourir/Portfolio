@@ -51,45 +51,44 @@ body {
 
 /* BOUTON HAMBURGER (Visible uniquement sur mobile) */
 
+/* Cette partie force le bouton à exister sans pousser le reste */
 .hamburger {
-    display: none; 
-    font-size: 32px;
+    display: none; /* Toujours caché sur ordinateur */
+    font-size: 30px;
     cursor: pointer;
-    color: #c499ff !important; /* Forcé en violet pour être visible */
-    user-select: none;
+    color: #c499ff;
+    position: fixed; /* Il "flotte" au-dessus du reste */
+    right: 15px;
+    top: 15px;
+    z-index: 5000; /* Priorité maximale pour qu'il soit visible */
+    background: white; /* Petit fond blanc pour qu'il ressorte */
+    padding: 5px;
+    border-radius: 5px;
 }
 
-
-/* ===== ADAPTATION MOBILE (Max 768px) ===== */
-@media (max-width: 768px) {
-    .navbar {
-        justify-content: flex-end; /* Burger à droite */
-    }
-
+@media (max-width: 900px) {
     .hamburger {
-        display: block; /* Devient visible */
+        display: block !important; /* Apparaît uniquement sur mobile */
     }
 
+    /* On cache les liens tassés pour laisser de la place au bouton */
     .nav-links {
-        display: none; /* Cache les liens horizontaux */
+        display: none; 
         flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white; /* FOND BLANC POUR ÉVITER LE VIOLET SUR VIOLET */
-        padding: 30px 0;
-        text-align: center;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        gap: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%; /* Prend tout l'écran au clic */
+        height: 100vh;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 4000;
     }
 
+    /* Classe activée par ton JS */
     .nav-links.open {
-        display: flex; /* S'affiche au clic */
-    }
-
-    .nav-links a {
-        font-size: 18px;
+        display: flex !important;
     }
 }
 
