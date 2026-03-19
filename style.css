@@ -18,11 +18,18 @@ body {
 }
 
 /* Espacement automatique pour tous les titres (Original conservé) */
-h1, h2, h3 {
+h1, h2 {
     margin-bottom: 20px;
     margin-top: 10px;
     font-family: 'Playfair Display', serif; /* Police classe pour TOUS les titres */
     color: #4b2e83; /* Violet foncé pour le contraste */
+}
+
+h3 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif; /* Police classe pour TOUS les titres */
+    color: #c9a1f7; /* Violet claire pour le contraste */
 }
 
 p {
@@ -46,27 +53,32 @@ p {
     background: white;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centre les liens sur PC */
+    justify-content: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 0 20px;
 }
 
-/* CORRECTIF : Ajout de la zone pour ton logo "AB" */
-.nav-logo-container {
+.navbar-logo {
     position: absolute;
-    left: 20px; /* Force le logo à gauche */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
+    left: 30px; /* On l'écarte un peu plus du bord gauche pour respirer */
+    top: 0;
+    height: 70px;
+    width: 100px; /* On limite la largeur pour ne pas gêner les liens */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le logo dans son propre cadre */
+    overflow: hidden; 
+    text-decoration: none;
 }
 
-/* CORRECTIF : Style cadré pour l'image du logo */
-.nav-logo { 
-    height: 55px; 
-    width: auto; 
+.navbar-logo img {
+    height: 100px; /* On réduit un tout petit peu la taille interne */
+    width: auto;
     object-fit: contain;
-    mix-blend-mode: multiply; /* Enlève le fond blanc du logo */
+    /* Le transform translate ajuste la position millimétrée (X, Y) */
+    transform: scale(1) translateY(2px); 
+    display: block;
 }
 
 .nav-links {
@@ -262,14 +274,16 @@ section {
 }
 
 /* ===== RSVP ===== */
+
 .rsvp {
-    background: #c499ff;
-    color: white;
+    background-color: #f3e9ff; /* Un violet très pâle et élégant */
+    color: #4b2e83; /* On met le texte en violet foncé pour qu'il soit bien lisible */
+    padding: 80px 20px;
 }
 
-.rsvp iframe {
-    border: none;
-    border-radius: 10px;
+/* Si tu as un titre à l'intérieur de cette section */
+.rsvp h2 {
+    color: #4b2e83; /* Pour que le titre "Confirmation de présence" ressorte bien */
 }
 
 /* ===== FOOTER ===== */
