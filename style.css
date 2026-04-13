@@ -211,12 +211,12 @@ p {
 .date {
     font-size: 1.3rem;
     margin-top: 10px;
-    color: ##f5f5f5;
+    color: ##f5f5f5 !important;
 }
 
 .tagline {
     margin-top: 15px;
-    color: #000;
+    color: #000 !important;
 }
 
 .hero-buttons {
@@ -430,7 +430,7 @@ footer {
    
 @media (max-width: 768px) {
     .hero {
-        background-attachment: scroll; /* On revient à un défilement normal sur mobile */
+        background-attachment: scroll !important; /* On revient à un défilement normal sur mobile */
     }
 }   
 
