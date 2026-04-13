@@ -211,14 +211,17 @@ p {
 .date {
     font-size: 1.3rem;
     margin-top: 10px;
+    color: #000;
 }
 
 .tagline {
     margin-top: 15px;
+    color: #000;
 }
 
 .hero-buttons {
     margin-top: 25px;
+    color: #000;
 }
 
 /* ===== BOUTONS ===== */
