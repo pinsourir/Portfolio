@@ -10,7 +10,9 @@ body {
     text-align: center;
     scroll-behavior: smooth;
     overflow-x: hidden; /* CORRECTIF : Empêche le scroll horizontal */
+
 }
+
 
 /* CORRECTIF : Empêche les paddings de faire gonfler les boîtes */
 * {
@@ -18,7 +20,7 @@ body {
 }
 
 /* Espacement automatique pour tous les titres (Original conservé) */
-h1, h2 {
+h2 {
     margin-bottom: 20px;
     margin-top: 10px;
     font-family: 'Playfair Display', serif; /* Police classe pour TOUS les titres */
@@ -32,14 +34,27 @@ h3 {
     color: #c9a1f7; /* Violet claire pour le contraste */
 }
 
+/* texte caligraphier en noir*/
+.texte {
+    color: #000;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+/* texte caligraphier en gris*/
+.subtitles {
+    color: #777;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
 p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     line-height: 1.6;
 }
 
 /* Cas particulier pour le Menu (ton image) */
 #menu p {
-    font-weight: bold;
+    font-weight: normal;
     margin: 10px 0;
 }
 
@@ -179,22 +194,23 @@ p {
     background-attachment: fixed; 
     
     /* Assure que la section suivante passe bien par-dessus */
-    z-index: 1; 
+    z-index: 1;
 }
 
 .overlay {
     background: rgba(0, 0, 0, 0.5);
     padding: 40px;
     border-radius: 10px;
-    background-size: cover;
 }
 
 /* Pour les grands titres romantiques (ex: Alicia & Bruno) */
 .hero h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 6rem; /* On l'agrandit car les polices cursives paraissent plus petites */
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Un léger ombre pour la lisibilité */
+   font-family: "Mrs Saint Delafield", cursive;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 6rem; /* On l'agrandit car les polices cursives paraissent plus petites */
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Un léger ombre pour la lisibilité */
 }
 
 /* Pour les sous-titres élégants */
@@ -207,17 +223,14 @@ p {
 .date {
     font-size: 1.3rem;
     margin-top: 10px;
-    color: ##f5f5f5 !important;
 }
 
 .tagline {
     margin-top: 15px;
-    color: #000 !important;
 }
 
 .hero-buttons {
     margin-top: 25px;
-    color: #f5f5f5;
 }
 
 /* ===== BOUTONS ===== */
@@ -253,21 +266,70 @@ section {
 /* ==========================================================
    5. TIMELINE, GALERIE & RSVP (Style original conservé)
    ========================================================== */
+/* --- La Timeline --- */
 .timeline {
     max-width: 600px;
-    margin: auto;
-    border-left: 4px solid #4b2e83;
-    padding-left: 20px;
-}
-
-.timeline-item {
-    margin-bottom: 30px;
+    margin: 40px auto;
+    border-left: 4px solid #4b2e83; 
+    padding-left: 35px; /* Espace entre la barre et ton texte */
+    position: relative;
     text-align: left;
 }
 
-.timeline-item h3 {
-    margin: 0;
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
 }
+
+/* --- Style de tes PHOTOS (à gauche de la barre) --- */
+.photo-etape {
+    position: absolute;
+    
+    /* Placement MAGIQUE : rapproché de la barre */
+    left: -75px; /* Ajuste pour que l'image soit juste à gauche de la ligne */
+    
+    top: -5px;   /* Aligne la photo avec le haut du titre */
+    width: 60px; /* ON AGRANDIT ICI (Taille précédente: ~45px) */
+    height: auto;
+    
+    background: transparent !important; /* On garantit la transparence */
+    border: none !important;
+    display: block;
+    
+    /* Empêche les images Solid d'être trop lourdes visuellement */
+    opacity: 0.9; 
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+}
+
+/* --- Ajustement Mobile (pour ne pas que les images sortent de l'écran) --- */
+@media (max-width: 768px) {
+    .timeline {
+        margin-left: 80px; /* On décale tout vers la droite sur mobile */
+        margin-right: 20px;
+    }
+    
+    .photo-etape {
+        left: -70px; /* On les rapproche un peu de la barre sur petit écran */
+        width: 50px;/* Taille sur mobile */
+    }
+}
+
+/* --- Style du Texte (On garde ce que tu avais) --- */
+.timeline-item h3 {
+    color: #c9a1f7;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+}
+
+.timeline-item .subtitles {
+    margin-top: 3px;
+    color: #777;
+    font-size: 1rem;
+}
+
+
+
 
 /* ===== GALERIE ===== */
 .gallery {
@@ -283,6 +345,9 @@ section {
     object-fit: cover;
     border-radius: 15px;
 }
+
+
+
 
 /* ===== RSVP ===== */
 
@@ -312,14 +377,14 @@ footer {
     padding: 100px 20px;
     text-align: center;
 }
-
+/* titre caligraphier en violet foncé*/
 .countdown-title {
     font-size: 2.5rem;
     font-family: 'Playfair Display', serif;
     margin-bottom: 10px;
     color: #4b2e83;
 }
-
+/* texte caligraphier en gris*/
 .countdown-subtitle {
     color: #777;
     margin-bottom: 50px;
@@ -417,13 +482,50 @@ footer {
 .prev { left: -20px; }
 .next { right: -20px; }
 
+/* ==========================================================
+   Palette de couleurs Jardin d'été
+   ========================================================== */
+.color-palette {
+    margin-top: -10px;
+    margin-bottom: 40px;  /* On crée un bel espace avant la question suivante */
+    text-align: center;
+}
+
+.color-palette p {
+    margin-top: 0; /* Supprime l'espace entre le titre et cette phrase */
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px; /* Espace maîtrisé avant les pastilles */
+}
+
+.swatches {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espace entre les pastilles */
+}
+
+.swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Rend la pastille ronde */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Petit relief classe */
+    border: 2px solid white; /* Contour blanc pour détacher du fond */
+}
+
+/* Les 4 couleurs extraites de ton image */
+.color-1 { background-color: #616e53; } /* Vert Mousse Profond (Le plus haut) */
+.color-2 { background-color: #929a8a; } /* Vert Sauge Pâle */
+.color-3 { background-color: #ba9a92; } /* Rose Poudré (Nude) */
+.color-4 { background-color: #f7d6d1; } /* Rose Pâle Romantique (Le plus bas) */
+.color-5 { background-color: #fceae8; } /* Le rose le plus clair, comme ton fond */
+
 /* Correction Adaptabilité Mobile Globale (Style original conservé) */
 @media (max-width: 768px) {
-    /* CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
+     CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
     .hero h1 {
         font-size: 3.5rem !important; 
     }
-   
 
     .carousel-slide img {
         height: 450px; /* Un peu plus petit sur petit écran */
@@ -431,3 +533,4 @@ footer {
     .prev { left: 5px; }
     .next { right: 5px; }
 }
+
