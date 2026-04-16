@@ -312,7 +312,7 @@ section {
     .photo-etape {
         /* On augmente le décalage négatif : 
            Puisque l'icône fait 50px, -60px la place à 10px de la barre */
-        left: -60px; 
+        left: -75px; 
         width: 45px; /* Légèrement réduit (de 50 à 45) pour plus de confort visuel */
         top: 0;
     }
