@@ -139,28 +139,59 @@
     <h2 class="countdown-title">Les lieux</h2>
     <h3>Le domaine des 3 voyages</h3>
 
-    <!-- photos des lieux -->
-    <div class="gallery">
-        <img src="https://www.ville-domont.fr/var/www/storage/images/mediatheque/ville-de-domont/images/agenda/tuile-agenda-eglise/32654-1-fre-FR/TUILE-AGENDA-Eglise.jpg" alt="Photo lieu 1">
-        <img src="https://www.ville-domont.fr/var/www/storage/images/mediatheque/ville-de-domont/images/agenda/mairie-domont-fermeture-services-municipaux-site/15067-1-fre-FR/Mairie-Domont-fermeture-services-municipaux-site.jpg" alt="Photo lieu 2">
-        <img src="https://image.bridebook.com/weddingsuppliers/venue/frBXrBx9XZ/b45f611f-cd4c-407c-b124-66034f98b923.jpg/dpr=2,fit=cover,g=face,w=460,h=310" alt="Photo lieu 3">
+    <!-- bouton des lieux -->
+    <div class="lieu-selector">
+    <button class="tab-btn active" onclick="showLieu('eglise')">Église</button>
+    <button class="tab-btn" onclick="showLieu('mairie')">Mairie</button>
+    <button class="tab-btn" onclick="showLieu('domaine')">Domaine</button>
+</div>
+
+<div id="eglise" class="lieu-content active">
+    <img src="image/eglise_photo.jpg" alt="Église" class="img-lieu">
+    <p class="adresse">Adresse : Église de Saint-Pierre, Rue de l'Église</p>
+    <div class="map-container">
+        <!-- Google Maps intégré (remplacer l’adresse) -->
+         <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d335288.24231016746!2d0.7979679107665939!3d48.96415967667269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6b4bb0d9fd9bd%3A0xb11c1e3f29302a31!2sdomaine%20des%203%20voyages!5e0!3m2!1sfr!2sfr!4v1772550130853!5m2!1sfr!2sfr"
+            width="100%" 
+            height="400" 
+            style="border:0;"
+            loading="lazy">
+        </iframe>
     </div>
+</div>
 
+<div id="mairie" class="lieu-content">
+    <img src="image/mairie_photo.jpg" alt="Mairie" class="img-lieu">
+    <p class="adresse">Adresse : Place de la Mairie, 75000 Ville</p>
+    <div class="map-container">
+        <!-- Google Maps intégré (remplacer l’adresse) -->
+         <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d335288.24231016746!2d0.7979679107665939!3d48.96415967667269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6b4bb0d9fd9bd%3A0xb11c1e3f29302a31!2sdomaine%20des%203%20voyages!5e0!3m2!1sfr!2sfr!4v1772550130853!5m2!1sfr!2sfr"
+            width="100%" 
+            height="400" 
+            style="border:0;"
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
 
-    <p class="texte"><strong>Adresse :</strong> domaine des 3 voyages, 7 Rue de Pacy, 27640 Merey</p>
+<div id="domaine" class="lieu-content">
+    <img src="image/domaine_salle.jpg" alt="Domaine" class="img-lieu">
+    <p class="adresse">Adresse : Domaine des 3 Voyages, 7 Rue de Pacy, 27640 Merey</p>
+    <p class="conseil">Conseils d'accès : parking disponible sur place.</p>
+    <div class="map-container">
+        <!-- Google Maps intégré (remplacer l’adresse) -->
+         <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d335288.24231016746!2d0.7979679107665939!3d48.96415967667269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6b4bb0d9fd9bd%3A0xb11c1e3f29302a31!2sdomaine%20des%203%20voyages!5e0!3m2!1sfr!2sfr!4v1772550130853!5m2!1sfr!2sfr"
+            width="100%" 
+            height="400" 
+            style="border:0;"
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
 
-    <!-- Google Maps intégré (remplacer l’adresse) -->
-   
-
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d335288.24231016746!2d0.7979679107665939!3d48.96415967667269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6b4bb0d9fd9bd%3A0xb11c1e3f29302a31!2sdomaine%20des%203%20voyages!5e0!3m2!1sfr!2sfr!4v1772550130853!5m2!1sfr!2sfr"
-        width="100%" 
-        height="400" 
-        style="border:0;"
-        loading="lazy">
-    </iframe>
-    
-    <p class="texte">Conseils d’accès : parking disponible sur place.</p>
 </section>
 
 <!-- ===== 5. INFORMATIONS PRATIQUES ===== -->
