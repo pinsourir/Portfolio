@@ -659,59 +659,67 @@ footer {
 
 
 /* ==========================================================
-   Notre histoir cercle
+   CARROUSEL CIRCULAIRE (Notre Histoire)
    ========================================================== */
+
+/* 1. Le conteneur extérieur : sert à centrer le cercle horizontalement */
 .histoire-cercle-container {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
+    display: flex;             /* Active le mode Flexbox pour l'alignement */
+    justify-content: center;   /* Centre le contenu sur la ligne */
+    margin: 40px 0;            /* Ajoute de l'espace au-dessus et en-dessous du cercle */
 }
 
+/* 2. Le cadre du cercle : définit la forme et les limites */
 .diaporama-cercle {
-    position: relative;
-    width: 280px;  /* Taille du cercle */
-    height: 280px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid #4b2e83; /* Ta couleur violette */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    position: relative;        /* Nécessaire pour placer les flèches à l'intérieur */
+    width: 280px;              /* Largeur du cercle (ajuste selon tes envies) */
+    height: 280px;             /* Doit être identique à la largeur pour un rond parfait */
+    border-radius: 50%;        /* La magie qui transforme le carré en rond */
+    overflow: hidden;          /* Coupe les coins des photos pour qu'elles restent dans le rond */
+    border: 2px solid #4b2e83; /* Ta bordure violette décorative */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Ajoute un effet d'ombre pour le relief */
 }
 
+/* 3. Les diapositives : s'assurent que les photos remplissent le cercle */
 .slide-histoire {
-    display: none;
-    width: 100%;
-    height: 100%;
+    display: none;             /* Cache toutes les photos par défaut */
+    width: 100%;               /* Prend 100% de la largeur du cercle */
+    height: 100%;              /* Prend 100% de la hauteur du cercle */
 }
 
+/* 4. La classe "active" : ajoutée par le JS pour afficher la photo en cours */
 .slide-histoire.active {
-    display: block;
-    animation: fadeEffect 1s;
+    display: block;            /* Rend la photo visible */
+    animation: fadeEffect 1s;  /* Lance l'animation de fondu (définie plus bas) */
 }
 
+/* 5. Le réglage de l'image : évite les déformations */
 .slide-histoire img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Important : remplit le cercle sans déformer */
+    width: 100%;               /* L'image s'étire sur toute la largeur */
+    height: 100%;              /* L'image s'étire sur toute la hauteur */
+    object-fit: cover;         /* Zoom légèrement pour remplir sans écraser le visage */
 }
 
-/* Boutons fléchés discrets */
+/* 6. Les flèches : les boutons pour changer de photo */
 .prev-histoire, .next-histoire {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.5);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    color: #4b2e83;
-    font-weight: bold;
+    position: absolute;        /* Positionne les flèches "sur" l'image */
+    top: 50%;                  /* Aligne verticalement au centre */
+    transform: translateY(-50%); /* Ajustement précis du centrage vertical */
+    /*background: rgba(255,255,255,0.7); /* Fond blanc transparent pour voir l'image derrière */
+    border: none;              /* Supprime la bordure par défaut du bouton */
+    padding: 10px;             /* Taille de la zone cliquable */
+    cursor: pointer;           /* Change le curseur en main au survol */
+    border-radius: 50%;        /* Rend les boutons fléchés eux aussi ronds */
+    color: #4b2e83;            /* Couleur des flèches (ton violet) */
+    font-weight: bold;         /* Rend les flèches plus épaisses */
+    z-index: 10;               /* Garde les flèches au premier plan */
 }
 
-.prev-histoire { left: 10px; }
-.next-histoire { right: 10px; }
+.prev-histoire { left: 10px; }  /* Décale la flèche gauche du bord */
+.next-histoire { right: 10px; } /* Décale la flèche droite du bord */
 
+/* 7. L'animation de fondu (Fade) */
 @keyframes fadeEffect {
-    from {opacity: 0.4;} 
-    to {opacity: 1;}
+    from { opacity: 0.4; }      /* Commence à moitié transparent */
+    to { opacity: 1; }          /* Finit totalement opaque */
 }
