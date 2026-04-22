@@ -88,3 +88,18 @@ function moveSlide(direction) {
     const offset = -currentIndex * 100;
     slide.style.transform = `translateX(${offset}%)`;
 }
+
+//===== Boutons Lieux ========//
+function showLieu(idLieu) {
+    // 1. Cacher tous les contenus
+    const contenus = document.querySelectorAll('.lieu-content');
+    contenus.forEach(c => c.classList.remove('active'));
+
+    // 2. Désactiver tous les boutons
+    const boutons = document.querySelectorAll('.tab-btn');
+    boutons.forEach(b => b.classList.remove('active'));
+
+    // 3. Afficher le contenu choisi et activer son bouton
+    document.getElementById(idLieu).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
