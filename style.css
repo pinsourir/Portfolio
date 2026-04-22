@@ -656,3 +656,62 @@ footer {
 .faq-item.active .faq-answer {
     max-height: 200px; /* Hauteur max de la réponse une fois ouverte */
 }
+
+
+/* ==========================================================
+   Notre histoir cercle
+   ========================================================== */
+.histoire-cercle-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.diaporama-cercle {
+    position: relative;
+    width: 280px;  /* Taille du cercle */
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #4b2e83; /* Ta couleur violette */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.slide-histoire {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-histoire.active {
+    display: block;
+    animation: fadeEffect 1s;
+}
+
+.slide-histoire img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Important : remplit le cercle sans déformer */
+}
+
+/* Boutons fléchés discrets */
+.prev-histoire, .next-histoire {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #4b2e83;
+    font-weight: bold;
+}
+
+.prev-histoire { left: 10px; }
+.next-histoire { right: 10px; }
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;} 
+    to {opacity: 1;}
+}
