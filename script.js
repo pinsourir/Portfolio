@@ -103,3 +103,17 @@ function showLieu(idLieu) {
     document.getElementById(idLieu).classList.add('active');
     event.currentTarget.classList.add('active');
 }
+
+// ========= à la google  ==========
+function toggleFAQ(button) {
+    const item = button.parentElement;
+    
+    // Optionnel : ferme les autres questions ouvertes
+    /*
+    document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) otherItem.classList.remove('active');
+    });
+    */
+
+    item.classList.toggle('active');
+}
