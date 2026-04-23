@@ -501,7 +501,7 @@ footer {
 
      /*CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
     .hero h1 {
-        font-size: 3.5rem !important; 
+        font-size: 5rem !important; 
     }
 
     .carousel-slide img {
