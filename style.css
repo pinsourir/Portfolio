@@ -1,54 +1,71 @@
 /* ==========================================================
-   1. BASES & TYPOGRAPHIE
+   1. BASES & TYPOGRAPHIE (RÉTABLIES)
    ========================================================== */
 * {
-    box-sizing: border-box; /* Crucial pour que les paddings ne cassent pas la structure */
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding-top: 70px;
-    font-family: 'Playfair Display', serif; /* Police chic principale */
+    font-family: 'Playfair Display', serif; /* Ta police par défaut */
     background-color: #fff5f8;
     color: #333;
     text-align: center;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Empêche le scroll horizontal parasite */
+    overflow-x: hidden;
 }
 
+/* Titre principal Hero */
+h1 {
+   font-family: "Mrs Saint Delafield", cursive;
+   font-weight: 400;
+   font-size: 6rem;
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* CORRECTIF : Ta police spécifique pour les H2 */
 h2 {
     margin-bottom: 20px;
     margin-top: 10px;
     font-family: 'Playfair Display', serif;
-    color: #4b2e83; /* Violet foncé */
-    font-size: 2.8rem; /* RÉTABLI : Taille plus grande pour les titres */
+    color: #4b2e83; 
+    font-size: 3rem; /* Taille imposante comme demandé */
+    font-weight: 700;
 }
 
 h3 {
     margin-bottom: 20px;
     margin-top: 10px;
     font-family: 'Playfair Display', serif;
-    color: #c9a1f7; /* Violet clair */
+    color: #c9a1f7;
 }
 
+/* CORRECTIF : Classe .texte (Italique noir) */
 .texte {
     color: #000;
     margin-bottom: 10px;
-    font-style: italic; /* Texte calligraphié noir */
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
 }
 
-/* CORRECTIF : Style pour "Notre histoire" et "Compte à rebours" */
-.subtitles, .countdown-title {
-    color: #777 !important; /* Gris comme sur tes captures */
+/* CORRECTIF : Classe .subtitles (Italique gris calligraphié) */
+.subtitles {
+    color: #777;
     margin-bottom: 10px;
-    font-style: italic !important;
-    font-family: 'Mrs Saint Delafield', cursive !important; /* Police manuscrite */
+    font-family: 'Mrs Saint Delafield', cursive; /* Police manuscrite grise */
+    font-style: italic;
     font-size: 2.2rem;
 }
 
+/* CORRECTIF : Style par défaut des paragraphes <p> */
 p {
     margin-bottom: 10px;
     line-height: 1.6;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
 }
 
 #menu p {
@@ -57,7 +74,7 @@ p {
 }
 
 /* ==========================================================
-   2. LA NAVIGATION
+   2. LA NAVIGATION (Logo AB et liens)
    ========================================================== */
 .navbar {
     position: fixed;
@@ -81,7 +98,6 @@ p {
     align-items: center;
     justify-content: center;
     overflow: hidden; 
-    text-decoration: none;
 }
 
 .navbar-logo img {
@@ -89,7 +105,6 @@ p {
     width: auto;
     object-fit: contain;
     transform: scale(0.9) translateY(2px); 
-    display: block;
 }
 
 .nav-links {
@@ -106,13 +121,12 @@ p {
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: #8a5fd3 !important;
-}
+.nav-links a:hover { color: #8a5fd3 !important; }
 
+/* Menu Mobile */
 .hamburger {
     display: none; 
     font-size: 30px;
@@ -122,10 +136,8 @@ p {
     right: 20px;
 }
 
-/* --- ADAPTATION MOBILE NAVIGATION --- */
 @media (max-width: 900px) {
     .hamburger { display: block !important; }
-
     .nav-links {
         display: none; 
         flex-direction: column;
@@ -135,24 +147,16 @@ p {
         background-color: white; 
         justify-content: center;
         align-items: center;
-        gap: 20px;
         z-index: 5000;
     }
-
     .nav-links.open { display: flex !important; }
-
-    .nav-links li { width: 100%; text-align: center; }
-
     .nav-links a {
         font-size: 22px !important;
         color: #4b2e83 !important;
         text-transform: uppercase;
         border-bottom: 1px solid #f3e9ff;
-        padding-bottom: 5px;
-        width: 80%;
+        padding: 10px;
     }
-
-    .nav-links.open ~ .navbar-logo { display: none; }
 }
 
 /* ==========================================================
@@ -161,30 +165,11 @@ p {
 .hero {
     background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
     height: 100vh;
-    position: relative;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-attachment: fixed;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 10px;
-}
-
-.hero h1 {
-   font-family: "Mrs Saint Delafield", cursive;
-   font-weight: 400;
-   font-size: 6rem;
-   color: white;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.date { font-size: 1.3rem; margin-top: 10px; }
 
 .btn {
     display: inline-block;
@@ -225,60 +210,46 @@ section { padding: 100px 20px; }
     top: -5px;   
     width: 60px; 
     height: auto;
-    background: transparent !important;
-    border: none !important;
-    opacity: 0.9; 
-    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
-}
-
-@media (max-width: 768px) {
-    .timeline { margin-left: 80px; margin-right: 15px; }
-    .photo-etape { left: -75px; width: 45px; }
 }
 
 /* ==========================================================
-   5. COMPTE À REBOURS
+   5. COMPTE À REBOURS (Style Capture)
    ========================================================== */
-.countdown-luxe {
-    background: linear-gradient(to bottom, #fdfbff, #f3e9ff);
-    padding: 100px 20px;
-    text-align: center;
+.countdown-title {
+    font-family: 'Mrs Saint Delafield', cursive;
+    color: #777; /* Gris calligraphié */
+    font-size: 2.5rem;
 }
 
 .countdown-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .time-box {
     background: white;
-    padding: 30px 25px;
+    padding: 25px;
     border-radius: 20px;
     min-width: 120px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .time-box span {
     font-size: 2.8rem;
     font-weight: bold;
     color: #c499ff;
-    display: inline-block;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: block;
 }
 
 .time-box small {
-    display: block;
-    margin-top: 8px;
     color: #888;
-    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 /* ==========================================================
-   6. CARROUSEL GALERIE
+   6. CARROUSEL & GALERIE
    ========================================================== */
 .carousel-wrapper {
     position: relative;
@@ -301,599 +272,76 @@ section { padding: 100px 20px; }
 
 .carousel-slide img {
     width: 100%;
-    flex-shrink: 0;
     height: 600px;
     object-fit: cover;
 }
 
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 10;
-    color: #4b2e83;
-}
-
-.prev { left: -20px; }
-.next { right: -20px; }
-
 /* ==========================================================
-   7. LIEUX & RSVP (Correctif Couleurs)
+   7. LIEUX & RSVP (Correctif Rose)
    ========================================================== */
-.lieu-content {
-    display: none;
-    animation: fadeIn 0.5s;
-}
-
-.lieu-content.active { display: block; }
-
-.tab-btn {
-    padding: 10px 20px;
-    border: 2px solid #4b2e83;
-    background: white;
-    color: #4b2e83;
-    cursor: pointer;
-    border-radius: 20px;
-    font-family: 'Playfair Display', serif;
-    flex: 1;
-    max-width: 120px;
-}
-
-.tab-btn.active { background: #4b2e83; color: white; }
-
-/* CORRECTIF : Suppression du rose sur la partie RSVP */
-.section-rsvp {
-    background-color: #f3e9ff !important; /* Violet très pâle */
-}
-
-/* ==========================================================
-   8. FAQ
-   ========================================================== */
-.faq-container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-.faq-item { border-bottom: 1px solid #ddd; }
-.faq-question {
-    width: 100%;
-    padding: 20px 0;
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: #4b2e83;
-    cursor: pointer;
-}
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-.faq-item.active .faq-answer { max-height: 500px; }
-
-/* ==========================================================
-   9. CARROUSEL CIRCULAIRE
-   ========================================================== */
-.histoire-cercle-container {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-}
-
-.diaporama-cercle {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid #4b2e83; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.slide-histoire { display: none; width: 100%; height: 100%; }
-.slide-histoire.active { display: block; animation: fadeEffect 1s; }
-.slide-histoire img { width: 100%; height: 100%; object-fit: cover; }
-
-.prev-histoire, .next-histoire {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    z-index: 10;
-}
-.prev-histoire { left: 10px; }
-.next-histoire { right: 10px; }
-
-/* ==========================================================
-   10. PALETTE & FOOTER
-   ========================================================== */
-.swatches { display: flex; justify-content: center; gap: 15px; }
-.swatch {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.color-1 { background-color: #616e53; }
-.color-2 { background-color: #929a8a; }
-.color-3 { background-color: #ba9a92; }
-.color-4 { background-color: #f7d6d1; }
-.color-5 { background-color: #fceae8; }
-
-footer { padding: 20px; background: #c499ff; color: white; }
-
-/* --- ANIMATIONS --- */
-@keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }/* ==========================================================
-   1. BASES & TYPOGRAPHIE
-   ========================================================== */
-* {
-    box-sizing: border-box; /* Crucial pour que les paddings ne cassent pas la structure */
-}
-
-body {
-    margin: 0;
-    padding-top: 70px;
-    font-family: 'Playfair Display', serif; /* Police chic principale */
-    background-color: #fff5f8;
-    color: #333;
-    text-align: center;
-    scroll-behavior: smooth;
-    overflow-x: hidden; /* Empêche le scroll horizontal parasite */
-}
-
-h2 {
-    margin-bottom: 20px;
-    margin-top: 10px;
-    font-family: 'Playfair Display', serif;
-    color: #4b2e83; /* Violet foncé */
-}
-
-h3 {
-    margin-bottom: 20px;
-    margin-top: 10px;
-    font-family: 'Playfair Display', serif;
-    color: #c9a1f7; /* Violet clair */
-}
-
-.texte {
-    color: #000;
-    margin-bottom: 10px;
-    font-style: italic; /* Texte calligraphié noir */
-}
-
-.subtitles {
-    color: #777;
-    margin-bottom: 10px;
-    font-style: italic; /* Texte calligraphié gris */
-}
-
-p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-#menu p {
-    font-weight: normal;
-    margin: 10px 0;
-}
-
-/* ==========================================================
-   2. LA NAVIGATION (Rétablie)
-   ========================================================== */
-.navbar {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    height: 70px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    padding: 0 20px;
-}
-
-.navbar-logo {
-    position: absolute;
-    left: 30px; 
-    height: 70px;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
-    text-decoration: none;
-}
-
-.navbar-logo img {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-    transform: scale(0.9) translateY(2px); 
-    display: block;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    width: 80%;
-    justify-content: space-evenly; /* RÉPARTITION SUR LA LONGUEUR */
-    margin: 0; padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #c499ff !important; /* Violet de base */
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #8a5fd3 !important;
-}
-
-.hamburger {
-    display: none; 
-    font-size: 30px;
-    cursor: pointer;
-    color: #c499ff;
-    position: absolute;
-    right: 20px;
-}
-
-/* --- ADAPTATION MOBILE NAVIGATION --- */
-@media (max-width: 900px) {
-    .hamburger { display: block !important; }
-
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100vh;
-        background-color: white; 
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        z-index: 5000;
-    }
-
-    .nav-links.open { display: flex !important; }
-
-    .nav-links li { width: 100%; text-align: center; }
-
-    .nav-links a {
-        font-size: 22px !important;
-        color: #4b2e83 !important;
-        text-transform: uppercase;
-        border-bottom: 1px solid #f3e9ff;
-        padding-bottom: 5px;
-        width: 80%;
-    }
-
-    /* Cache le logo quand le menu plein écran est ouvert */
-    .nav-links.open ~ .navbar-logo { display: none; }
-}
-
-/* ==========================================================
-   3. HERO & SECTIONS
-   ========================================================== */
-.hero {
-    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
-    height: 100vh;
-    position: relative;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-attachment: fixed; /* EFFET FIXE */
-    z-index: 1;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 10px;
-}
-
-.hero h1 {
-   font-family: "Mrs Saint Delafield", cursive;
-   font-weight: 400;
-   font-size: 6rem;
-   color: white;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.countdown-title, .subtitle {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 600;
-}
-
-.date { font-size: 1.3rem; margin-top: 10px; }
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 25px;
-    background-color: #c499ff;
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    transition: 0.3s;
-}
-.btn:hover { background-color: #dcc5fc; }
-
-section { padding: 100px 20px; }
-.section-white { background: white; }
-.section-purple {
-    background: linear-gradient(to bottom, #ffffff, #f3e9ff);
-    color: #4b2e83;
-}
-
-/* ==========================================================
-   4. TIMELINE (Programme)
-   ========================================================== */
-.timeline {
-    max-width: 600px;
-    margin: 40px auto;
-    border-left: 4px solid #4b2e83; 
-    padding-left: 35px;
-    position: relative;
-    text-align: left;
-}
-
-.timeline-item { margin-bottom: 40px; position: relative; }
-
-.photo-etape {
-    position: absolute;
-    left: -100px; 
-    top: -5px;   
-    width: 60px; 
-    height: auto;
-    background: transparent !important;
-    border: none !important;
-    opacity: 0.9; 
-    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
-}
-
-@media (max-width: 768px) {
-    .timeline { margin-left: 80px; margin-right: 15px; }
-    .photo-etape { left: -75px; width: 45px; }
-}
-
-/* ==========================================================
-   5. COMPTE À REBOURS LUXE (Réparé)
-   ========================================================== */
-.countdown-luxe {
-    background: linear-gradient(to bottom, #fdfbff, #f3e9ff);
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.countdown-container {
-    display: flex;
-    justify-content: center; /* Centre les blocs côte à côte */
-    gap: 40px; /* Espace entre les blocs */
-    flex-wrap: wrap; /* Empile sur mobile uniquement */
-}
-
-.time-box {
-    background: white; /* Fond blanc propre */
-    padding: 30px 25px;
-    border-radius: 20px;
-    min-width: 120px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Petit relief élégant */
-    position: relative;
-    overflow: hidden;
-}
-
-.time-box span {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #c499ff;
-    display: inline-block;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.time-box small {
-    display: block;
-    margin-top: 8px;
-    color: #888;
-    letter-spacing: 1px;
-}
-
-/* ==========================================================
-   6. CARROUSEL GALERIE (Bas de page)
-   ========================================================== */
-.carousel-wrapper {
-    position: relative;
-    width: 90%;
-    max-width: 450px;
-    margin: 30px auto;
-}
-
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide img {
-    width: 100%;
-    flex-shrink: 0;
-    height: 600px;
-    object-fit: cover;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 10;
-    color: #4b2e83;
-}
-
-.prev { left: -20px; }
-.next { right: -20px; }
-
-@media (max-width: 768px) {
-    .carousel-slide img { height: 450px; }
-    .prev { left: 5px; }
-    .next { right: 5px; }
-}
-
-/* ==========================================================
-   7. LIEUX (Système d'onglets)
-   ========================================================== */
-.lieu-content {
-    display: none;
-    animation: fadeIn 0.5s;
-}
-
-.lieu-content.active { display: block; }
-
 .lieu-selector {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .tab-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: 2px solid #4b2e83;
     background: white;
     color: #4b2e83;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 30px;
     font-family: 'Playfair Display', serif;
-    flex: 1;
-    max-width: 120px;
 }
 
 .tab-btn.active { background: #4b2e83; color: white; }
 
-.img-lieu {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 15px;
+/* Suppression du Rose RSVP */
+.section-rsvp {
+    background-color: #f3e9ff; /* Violet pâle uniquement */
 }
 
-@media (min-width: 769px) {
-    .lieu-content { max-width: 700px; margin: 0 auto; padding: 20px; }
-    .img-lieu { max-height: 450px; width: auto; margin: 0 auto 20px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+/* Police spécifique pour le titre RSVP "Confirmation de présence" */
+.section-rsvp h2 {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-weight: 400;
+    font-size: 4rem;
 }
-
-/* ==========================================================
-   8. FAQ (Style Google)
-   ========================================================== */
-.faq-container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-.faq-item { border-bottom: 1px solid #ddd; }
-.faq-question {
-    width: 100%;
-    padding: 20px 0;
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: #4b2e83;
-    cursor: pointer;
-}
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-.faq-item.active .faq-answer { max-height: 500px; } /* Ouvre l'accordéon */
 
 /* ==========================================================
-   9. CARROUSEL CIRCULAIRE (Réparé & Centré)
+   8. NOTRE HISTOIRE (Cercle)
    ========================================================== */
 .histoire-cercle-container {
     display: flex;
-    justify-content: center; /* Centre le cercle horizontalement */
-    margin: 40px 0;
+    flex-direction: column;
+    align-items: center;
 }
 
 .diaporama-cercle {
-    position: relative;
-    width: 280px; /* Taille fixée */
-    height: 280px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #4b2e83; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border: 4px solid #4b2e83;
+    margin-top: 20px;
 }
 
-.slide-histoire { display: none; width: 100%; height: 100%; }
-.slide-histoire.active { display: block; animation: fadeEffect 1s; }
-.slide-histoire img { width: 100%; height: 100%; object-fit: cover; }
-
-.prev-histoire, .next-histoire {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    color: white; /* Blanc pour lire sur photo */
-    font-size: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    z-index: 10;
+.slide-histoire img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.prev-histoire { left: 10px; }
-.next-histoire { right: 10px; }
 
 /* ==========================================================
-   10. PALETTE DE COULEURS & FOOTER
+   9. FOOTER & ANIMATIONS
    ========================================================== */
-.swatches { display: flex; justify-content: center; gap: 15px; }
-.swatch {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+footer {
+    padding: 40px 20px;
+    background: #c499ff;
+    color: white;
 }
-.color-1 { background-color: #616e53; }
-.color-2 { background-color: #929a8a; }
-.color-3 { background-color: #ba9a92; }
-.color-4 { background-color: #f7d6d1; }
-.color-5 { background-color: #fceae8; }
 
-footer { padding: 20px; background: #c499ff; color: white; }
-
-/* --- ANIMATIONS (Vitales) --- */
-@keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
