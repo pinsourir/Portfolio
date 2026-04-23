@@ -148,16 +148,10 @@ p {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Ton gris transparent */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Optionnel : pour que le texte ne touche pas les bords sur tel */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px; /* Petit cadre arrondi sur PC */
 }
-
 /* Pour les grands titres romantiques (ex: Alicia & Bruno) */
 .hero h1 {
    font-family: "Mrs Saint Delafield", cursive;
@@ -703,4 +697,15 @@ footer {
     }
     .prev { left: 5px; }
     .next { right: 5px; }
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        border-radius: 0; /* On enlève les arrondis pour que ça colle aux bords */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
 }
